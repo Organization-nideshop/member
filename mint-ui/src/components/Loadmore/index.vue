@@ -2,7 +2,7 @@
   <div>
     <gheader :examplename="examplename"></gheader>
     <div class="page-loadmore-wrapper" :style="{ height: wrapperHeight + 'px' }">
-      <mt-spinner v-show="list<1 && InitialLoading" color="#26a2ff"></mt-spinner>
+      <mt-spinner v-show="list<1 && InitialLoading" color="#2181d4"></mt-spinner>
       <mt-loadmore :top-method="loadTop" @translate-change="translateChange" @top-status-change="handleTopChange"       :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" :auto-fill="false" ref="loadmore">
         <!-- :auto-fill="true" 时页面加载完毕时 默认执行loadBottom 值为false时 自己写一个加载 -->
         <div class="hot-list">
@@ -10,12 +10,12 @@
             <a href="javascript:;" class="show clearfix">
               <div class="img-box">
                 <img src="http://p18nr20h5.bkt.clouddn.com/o_1caahtfg41c9s1tv41hatr9718o4a.jpeg!180x120" class="fl">
-              </div> 
-              <h5 class="white-space">别让错误的认知毁掉我们的人生</h5> 
+              </div>
+              <h5 class="white-space">别让错误的认知毁掉我们的人生</h5>
               <p>
                 女孩天生就不擅长数学、女孩学不好数学是正常的。因为
                 <span class="color_e85647">...详情</span>
-              </p> 
+              </p>
               <p class="read">
                 <span class="fa fa-eye"></span> 391 &nbsp;&nbsp;&nbsp;
                 <span class="fa fa-pencil-square-o"></span> 10
@@ -25,13 +25,13 @@
         </div>
         <div slot="top" class="mint-loadmore-top" style="text-align:center">
           <span v-show="topStatus !== 'loading'" :class="{ 'rotate': topStatus === 'drop' }">↓</span>
-          <mt-spinner v-show="topStatus == 'loading'" color="#26a2ff"></mt-spinner>
+          <mt-spinner v-show="topStatus == 'loading'" color="#2181d4"></mt-spinner>
         </div>
         <div v-if="allLoaded" style="text-align:center;">没有更多数据了</div>
         <div slot="bottom" class="mint-loadmore-bottom">
           <span v-show="bottomStatus !== 'loading'" :class="{ 'is-rotate': bottomStatus === 'drop' }">↑</span>
           <span v-show="bottomStatus === 'loading'">
-            <mt-spinner v-show="bottomStatus == 'loading'" color="#26a2ff"></mt-spinner>
+            <mt-spinner v-show="bottomStatus == 'loading'" color="#2181d4"></mt-spinner>
           </span>
         </div>
       </mt-loadmore>
@@ -148,7 +148,7 @@ export default {
     white-space: nowrap;
     margin-bottom: 6px;
     font-size: 16px;
-    color: #000;
+    color: #333;
   }
   .hot-one a p {
     font-size: 12px;

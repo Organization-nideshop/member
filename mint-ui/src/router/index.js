@@ -10,6 +10,17 @@ import Gheader from '@/components/GlobleHeader'
 import Gfooter from '@/components/GlobleFooter'
 import Member from '@/view/Member/Index'
 import Integral from '@/view/Member/Integral/Integral'
+import Recharge from '@/view/Member/Recharge/Recharge'
+import Info from '@/view/Member/Info/Info'
+import Pay from '@/view/Member/Pay/Pay'
+import Coupon from '@/view/Member/Coupon/Coupon'
+import BindCoupon from '@/view/Member/Coupon/BindCoupon'
+import SaleDetail from '@/view/Member/SaleDetail/SaleDetail'
+import GrowthValue from '@/view/Member/GrowthValue/GrowthValue'
+import SignIn from '@/view/Member/SignIn/SignIn'
+import Advice from '@/view/Member/Advice/Advice'
+import Address from '@/view/Member/Address/Address'
+import Set from '@/view/Member/Set/Set'
 
 import HelloWorld from '@/components/HelloWorld'
 import Toast from '@/components/Toast'
@@ -65,10 +76,58 @@ export default new Router({
       component: Member
     },
     {
-      path: '/Member/Integral',
+      path: '/Member/Integral',//积分
       name: 'Integral',
       component: Integral
     },
+    {
+      path: '/Member/Recharge',//充值
+      name: 'Recharge',
+      component: Recharge
+    },
+    {
+      path: '/Member/Info',//个人信息
+      name: 'Info',
+      component: Info
+    },
+    {
+      path: '/Member/Pay',//支付
+      name: 'Pay',
+      component: Pay
+    },{
+      path: '/Member/Coupon',//优惠券
+      name: 'Coupon',
+      component: Coupon
+    },{
+      path: '/Member/BindCoupon',//绑定优惠券
+      name: 'BindCoupon',
+      component: BindCoupon
+    },{
+      path: '/Member/SaleDetail',//交易明细
+      name: 'SaleDetail',
+      component: SaleDetail
+    },{
+      path: '/Member/GrowthValue',//成长值
+      name: 'GrowthValue',
+      component: GrowthValue
+    },{
+      path: '/Member/SignIn',//签到
+      name: 'SignIn',
+      component: SignIn
+    },{
+      path: '/Member/Advice',//服务意见
+      name: 'Advice',
+      component: Advice
+    },{
+      path: '/Member/Address',//地址
+      name: 'Address',
+      component: Address
+    },{
+      path: '/Member/Set',//设置
+      name: 'Set',
+      component: Set
+    },
+
     //组件
     {
       path: '/List',

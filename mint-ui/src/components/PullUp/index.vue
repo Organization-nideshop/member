@@ -1,9 +1,9 @@
 <template>
   <div class="page-loadmore">
     <gheader :examplename="examplename"></gheader>
-    <div class="page-loadmore-wrapper" 
+    <div class="page-loadmore-wrapper"
       :style="{height: wrapperHeight + 'px'}">
-      <mt-spinner v-show="list<1 && InitialLoading" color="#26a2ff"></mt-spinner>
+      <mt-spinner v-show="list<1 && InitialLoading" color="#2181d4"></mt-spinner>
       <mt-loadmore :bottom-method="loadBottom"
         @bottom-status-change="handleBottomChange"
         :bottom-all-loaded="allLoaded" ref="loadmore" :auto-fill="false">
@@ -17,7 +17,7 @@
             <mt-spinner type="snake"></mt-spinner>
           </span>
         </div>
-      </mt-loadmore>  
+      </mt-loadmore>
     </div>
     <gfooter></gfooter>
   </div>
@@ -42,7 +42,7 @@ export default {
       }
       this.InitialLoading = false;
     }, 1500)
-    
+
     let windowWidth = document.documentElement.clientWidth;//获取屏幕宽度
     if(windowWidth >= 768){//这里根据自己的实际情况设置容器的高度
       this.wrapperHeight = document.documentElement.clientHeight - 105;

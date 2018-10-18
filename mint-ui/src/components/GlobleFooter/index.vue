@@ -8,7 +8,7 @@ export default {
   name: 'G-footer',
   data(){
     return {
-      msg: '页面底部'
+      msg: '技术支持-阿中软件'
     }
   },
   props: {

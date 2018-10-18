@@ -1,21 +1,15 @@
 <template>
 <div class="page-cell">
-  <mt-header :title="title">
-    <router-link to="/" slot="left">
-      <mt-button icon="back">返回</mt-button>
-      <!-- <mt-button @click="handleClose">关闭</mt-button> -->
-    </router-link>
-    <mt-button icon="more" slot="right"></mt-button>
-  </mt-header>
-  <p class="IntegralTitle">积分</p>
-  <p class="IntegralNum">{{IntegralNum}}</p>
-  <mt-navbar v-model="selected">
-    <mt-tab-item id="0">一个月内</mt-tab-item>
-    <mt-tab-item id="1">三个月内</mt-tab-item>
-  </mt-navbar>
-
+  <div class="IntegralHeader">
+    <p class="IntegralTitle">积分</p>
+    <p class="IntegralNum">{{IntegralNum}}</p>
+    <mt-navbar v-model="selected">
+      <mt-tab-item id="0">一个月内</mt-tab-item>
+      <mt-tab-item id="1">三个月内</mt-tab-item>
+    </mt-navbar>
+  </div>
   <!-- tab-container -->
-  <mt-tab-container v-model="selected">
+  <mt-tab-container v-model="selected" class="integralContainer">
     <mt-tab-container-item id="0">
       <ul class="mui-table-view"
           v-infinite-scroll="loadMore"
@@ -36,7 +30,7 @@
           </li>
         </ul>
   </mt-tab-container-item>
-  <mt-tab-container-item id="1">
+  <mt-tab-container-item id="1" >
     <ul class="mui-table-view"
         v-infinite-scroll="loadMore"
         infinite-scroll-disabled="moreLoading"
@@ -127,10 +121,6 @@ export default {
 </script>
 
 <style lang="less">
-// .page-infinite-wrapper {
-//     margin-top: -1px;
-//     overflow: scroll;
-// }
 ul {
   padding: 5px 0px;
 }
@@ -139,16 +129,34 @@ li {
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
 }
 li:first-child,
 li:last-child {
   border: none;
 }
+.IntegralHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 4px solid #fafafa;
+}
+.integralContainer {margin-top:150px}
 .IntegralTitle{
-  text-align: center
+  text-align: center;
+  color:#666;
+  padding: 40px 0 5px 0;
+  background-color: #fff;
 }
 .IntegralNum{
   text-align: center;
   font-weight: bold;
+  font-size: 22px;
+  color: #2181d4;
+  padding-bottom: 30px;
+  background-color: #fff;
+  border-bottom: 4px solid #fafafa;
 }
 </style>

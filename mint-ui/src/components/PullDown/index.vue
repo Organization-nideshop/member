@@ -1,9 +1,9 @@
 <template>
   <div class="page-loadmore">
     <gheader :examplename="examplename"></gheader>
-    <div class="page-loadmore-wrapper" 
+    <div class="page-loadmore-wrapper"
       :style="{height: wrapperHeight + 'px'}">
-      <mt-spinner v-show="list<1 && InitialLoading" color="#26a2ff"></mt-spinner>
+      <mt-spinner v-show="list<1 && InitialLoading" color="#2181d4"></mt-spinner>
       <mt-loadmore :top-method="loadTop"
         @top-status-change="handleTopChange" ref="loadmore" :auto-fill="false">
         <ul class="page-loadmore-list">
@@ -11,7 +11,7 @@
         </ul>
         <div slot="top" class="mint-loadmore-top" style="text-align:center">
           <span v-show="topStatus !== 'loading'" :class="{ 'rotate': topStatus === 'drop' }">↓</span>
-          <mt-spinner v-show="topStatus == 'loading'" color="#26a2ff"></mt-spinner>
+          <mt-spinner v-show="topStatus == 'loading'" color="#2181d4"></mt-spinner>
         </div>
       </mt-loadmore>
     </div>
@@ -37,7 +37,7 @@ export default {
       }
       this.InitialLoading = false;
     },1500)
-    
+
     let windowWidth = document.documentElement.clientWidth;//获取屏幕宽度
     if(windowWidth >= 768){//这里根据自己的实际情况设置容器的高度
       this.wrapperHeight = document.documentElement.clientHeight - 105;
