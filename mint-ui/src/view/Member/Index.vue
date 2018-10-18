@@ -67,9 +67,12 @@
         </div>
       </div>
     </div>
-    <div class="foot">
+    <!-- <gfooter>
       <img src="../../assets/img/btm-img.png">
-    </div>
+    </gfooter> -->
+  <div id="footer">
+    <img src="../../assets/img/btm-img.png">
+  </div>
   </div>
 </template>
 
@@ -85,6 +88,9 @@ export default {
 </script>
 
 <style lang="less">
+  body{
+    background: #fff;
+  }
   .top{
     display:flex;
     align-items:center;
@@ -221,6 +227,15 @@ export default {
     position: absolute;
     bottom: 5px;
     text-align: center;
+    
+  }
+  #footer {
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top:none; 
     img{
       width: 45%;
     }
