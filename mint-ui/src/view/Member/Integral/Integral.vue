@@ -3,7 +3,7 @@
   <div class="IntegralHeader">
     <p class="IntegralTitle">积分</p>
     <p class="IntegralNum">{{IntegralNum}}</p>
-    <mt-navbar v-model="selected">
+    <mt-navbar v-model="selected" class="tabChange">
       <mt-tab-item id="0">一个月内</mt-tab-item>
       <mt-tab-item id="1">三个月内</mt-tab-item>
     </mt-navbar>
@@ -41,7 +41,7 @@
           </li>
         <!--li数据遍历循环部分-->
         <li class="mui-table-view-cell" v-for="(item,index) in list" :key="index">
-          <span>{{item+index}}</span>
+          <span>{{item+index}}2</span>
         </li>
         <!--底部判断是加载图标还是提示“全部加载”-->
         <li class="more_loading" v-show="!queryLoading">
@@ -63,7 +63,7 @@ export default {
   data () {
     return {
       title:'交易明细',
-      selected:0,
+      selected:'0',
       queryLoading: false,
       moreLoading: false,
       allLoaded: false,
@@ -72,7 +72,7 @@ export default {
       pageSize: 20,
       pageNum: 1,
       initialloading: true,
-      list:['ce测试','ce测试','ce测试1','ce测试1','ce测试1','ce测试','ce测试','ce测试1','ce测试1','ce测试1'],
+      list:[],
       IntegralNum:0
     }
   },
@@ -141,22 +141,29 @@ li:last-child {
   left: 0;
   width: 100%;
   z-index: 1;
-  border-bottom: 4px solid #fafafa;
+  height: 169px;
+  overflow: hidden;
+  background-color: #fff;
 }
-.integralContainer {margin-top:150px}
+.integralContainer {margin-top:169px}
 .IntegralTitle{
   text-align: center;
   color:#666;
-  padding: 40px 0 5px 0;
+  padding: 30px 0 5px 0;
   background-color: #fff;
+  height: 60px;
 }
 .IntegralNum{
   text-align: center;
   font-weight: bold;
   font-size: 22px;
   color: #2181d4;
-  padding-bottom: 30px;
   background-color: #fff;
-  border-bottom: 4px solid #fafafa;
+}
+.tabChange{
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  border-top: 4px solid #fafafa;
 }
 </style>
