@@ -9,6 +9,8 @@ Vue.use(MintUI)
 import Gheader from '@/components/GlobleHeader'
 import Gfooter from '@/components/GlobleFooter'
 import Member from '@/view/Member/Index'
+import Integral from '@/view/Member/Integral/Integral'
+
 import HelloWorld from '@/components/HelloWorld'
 import Toast from '@/components/Toast'
 import Tabbar from '@/components/Tabbar'
@@ -62,6 +64,12 @@ export default new Router({
       name: 'Member',
       component: Member
     },
+    {
+      path: '/Member/Integral',
+      name: 'Integral',
+      component: Integral
+    },
+    //组件
     {
       path: '/List',
       name: 'HelloWorld',
