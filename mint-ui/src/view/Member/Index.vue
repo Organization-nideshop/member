@@ -1,5 +1,6 @@
 <template>
   <div>
+    <mt-spinner v-show="initialloading" type="snake" color="#00ccff" :size="20"></mt-spinner>
     <div class="top">
       <div class="icon-area">
         <div class="img-style">
@@ -9,7 +10,7 @@
       </div>
       <div class="top-content">
         <div class="uname">
-          玲玲<span>158****0702</span>
+          <span>玲玲</span>158****0702
         </div>
         <span>还差300成长值即可升至银卡</span>
         <mt-progress :value="progressWidth" :bar-height="5"></mt-progress>
@@ -17,54 +18,54 @@
           <div class="progress-active" v-bind:style="{width: progressWidth}"></div>
         </div> -->
       </div>
-      <div class="icon-style">
-          <img src="../../assets/img/ucenter_03.png">
-      </div>
+      <router-link class="icon-style" to="/Member/Info">
+        <img src="../../assets/img/ucenter_03.png">
+      </router-link>
     </div>
     <div class="nav">
-      <div class="nav-items">
+      <router-link class="nav-items" to="/Member/Integral">
         <span>0</span>我的余额
-      </div>
-      <div class="nav-items">
+      </router-link>
+      <router-link class="nav-items" to="/Member/Integral">
         <span>100</span>我的积分
-      </div>
+      </router-link>
     </div>
     <div class="advertise-img">
       <img src="../../assets/img/ucenter_07.jpg">
     </div>
     <div class="menu-list">
       <div class="line-items">
-        <div class="content">
+        <router-link class="content" to="/Member/Pay">
           <img src="../../assets/img/ucenter_10.png">门店支付
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/Coupon">
           <img src="../../assets/img/ucenter_12.png">优惠券
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/Recharge">
           <img src="../../assets/img/ucenter_07.png">余额充值
-        </div>
+        </router-link>
       </div>
       <div class="line-items">
-        <div class="content">
+        <router-link class="content" to="/Member/SaleDetail">
           <img src="../../assets/img/ucenter_17.png">交易明细
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/GrowthValue">
           <img src="../../assets/img/ucenter_18.png">成长值
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/SignIn">
           <img src="../../assets/img/ucenter_19.png">签到有礼
-        </div>
+        </router-link>
       </div>
       <div class="line-items">
-        <div class="content">
+        <router-link class="content" to="/Member/Advice">
           <img src="../../assets/img/ucenter_23.png">服务建议
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/Address">
           <img src="../../assets/img/ucenter_25.png">地址管理
-        </div>
-        <div class="content">
+        </router-link>
+        <router-link class="content" to="/Member/Set">
           <img src="../../assets/img/ucenter_27.png">设置
-        </div>
+        </router-link>
       </div>
     </div>
     <!-- <gfooter>
@@ -82,8 +83,14 @@ export default {
   data () {
     return {
       progressWidth: 60, // 进度条宽度
+      initialloading:true
     }
-  }
+  },
+  mounted() {
+    setTimeout(()=>{
+      this.initialloading = false;
+    },1500)
+  },
 }
 </script>
 
@@ -132,12 +139,13 @@ export default {
       height:75px;
       width: 50%;
       .uname{
-        font-weight:bold;
-        font-size:14px;
         margin-bottom:5px;
-        color: #1a1a1a;
+        color: #666;
         span{
-          margin-left:10px;
+          margin-right:10px;
+          color: #1a1a1a;
+          font-size:14px;
+          font-weight:bold;
         }
       }
       span{
@@ -185,6 +193,7 @@ export default {
       // height:40px;
       width:50%;
       font-size:12px;
+      color: #666;
       span{
         color:#2181d4;
         margin-bottom:5px;
@@ -217,8 +226,8 @@ export default {
         border-right: 1px solid #e4e4e4;
         img{
           margin-bottom:5px;
-          width: 30px;
-          height: 25px;
+          width: 27px;
+          height: 22px;
         }
       }
     }
