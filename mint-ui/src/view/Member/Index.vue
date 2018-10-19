@@ -23,7 +23,7 @@
       </router-link>
     </div>
     <div class="nav">
-      <router-link class="nav-items" to="/Member/Integral">
+      <router-link class="nav-items" to="/Member/RemaindSum">
         <span>0</span>我的余额
       </router-link>
       <router-link class="nav-items" to="/Member/Integral">
@@ -71,7 +71,7 @@
     <!-- <gfooter>
       <img src="../../assets/img/btm-img.png">
     </gfooter> -->
-  <div id="footer">
+  <div id="footer" class="indexFooter">
     <img src="../../assets/img/btm-img.png">
   </div>
   </div>
@@ -236,15 +236,15 @@ export default {
     position: absolute;
     bottom: 5px;
     text-align: center;
-    
+
   }
-  #footer {
+  #footer.indexFooter {
     text-align: center;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top:none; 
+    border-top:none;
     img{
       width: 45%;
     }

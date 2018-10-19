@@ -1,15 +1,15 @@
 <template>
 <div class="page-cell">
-  <div class="IntegralHeader">
-    <p class="IntegralTitle">积分</p>
-    <p class="IntegralNum">{{IntegralNum}}</p>
+  <div class="RemaindSumHeader">
+    <p class="RemaindSumTitle">余额</p>
+    <p class="RemaindSumNum">{{RemaindSumNum}}</p>
     <mt-navbar v-model="selected" class="tabChange">
       <mt-tab-item id="0">一个月内</mt-tab-item>
       <mt-tab-item id="1">三个月内</mt-tab-item>
     </mt-navbar>
   </div>
   <!-- tab-container -->
-  <mt-tab-container v-model="selected" class="integralContainer">
+  <mt-tab-container v-model="selected" class="RemaindSumContainer">
     <mt-tab-container-item id="0">
       <ul class="mui-table-view"
           v-infinite-scroll="loadMore"
@@ -73,7 +73,7 @@ export default {
       pageNum: 1,
       initialloading: true,
       list:[],
-      IntegralNum:0
+      RemaindSumNum:0
     }
   },
   methods: {
@@ -135,7 +135,7 @@ li:first-child,
 li:last-child {
   border: none;
 }
-.IntegralHeader{
+.RemaindSumHeader{
   position: fixed;
   top: 0;
   left: 0;
@@ -146,15 +146,15 @@ li:last-child {
   overflow: hidden;
   background-color: #fff;
 }
-.integralContainer {margin-top:169px}
-.IntegralTitle{
+.RemaindSumContainer {margin-top:169px}
+.RemaindSumTitle{
   text-align: center;
   color:#666;
   padding: 30px 0 5px 0;
   background-color: #fff;
   height: 60px;
 }
-.IntegralNum{
+.RemaindSumNum{
   text-align: center;
   font-weight: bold;
   font-size: 22px;

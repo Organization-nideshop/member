@@ -10,6 +10,7 @@ import Gheader from '@/components/GlobleHeader'
 import Gfooter from '@/components/GlobleFooter'
 import Member from '@/view/Member/Index'
 import Integral from '@/view/Member/Integral/Integral'
+import RemaindSum from '@/view/Member/RemaindSum/RemaindSum'
 import Recharge from '@/view/Member/Recharge/Recharge'
 import Info from '@/view/Member/Info/Info'
 import Pay from '@/view/Member/Pay/Pay'
@@ -20,6 +21,7 @@ import GrowthValue from '@/view/Member/GrowthValue/GrowthValue'
 import SignIn from '@/view/Member/SignIn/SignIn'
 import Advice from '@/view/Member/Advice/Advice'
 import Address from '@/view/Member/Address/Address'
+import AddAddress from '@/view/Member/Address/AddAddress'
 import Set from '@/view/Member/Set/Set'
 
 import HelloWorld from '@/components/HelloWorld'
@@ -81,6 +83,11 @@ export default new Router({
       component: Integral
     },
     {
+      path: '/Member/RemaindSum',//余额
+      name: 'RemaindSum',
+      component: RemaindSum
+    },
+    {
       path: '/Member/Recharge',//充值
       name: 'Recharge',
       component: Recharge
@@ -122,6 +129,10 @@ export default new Router({
       path: '/Member/Address',//地址
       name: 'Address',
       component: Address
+    },{
+      path: '/Member/AddAddress',//添加地址
+      name: 'AddAddress',
+      component: AddAddress
     },{
       path: '/Member/Set',//设置
       name: 'Set',
