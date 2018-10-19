@@ -23,6 +23,7 @@ import Advice from '@/view/Member/Advice/Advice'
 import Address from '@/view/Member/Address/Address'
 import AddAddress from '@/view/Member/Address/AddAddress'
 import Set from '@/view/Member/Set/Set'
+import Anniversary from '@/view/Member/Anniversary/Anniversary'
 
 import HelloWorld from '@/components/HelloWorld'
 import Toast from '@/components/Toast'
@@ -138,7 +139,11 @@ export default new Router({
       name: 'Set',
       component: Set
     },
-
+    {
+      path: '/Member/Anniversary',//纪念日
+      name: 'Anniversary',
+      component: Anniversary
+    },
     //组件
     {
       path: '/List',
